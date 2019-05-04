@@ -1,0 +1,33 @@
+<ion-header class="headerSettings">
+  <ion-toolbar>
+      <ion-button class="btnBack" fill="clear" color="medium" (click)="showProfile()">
+          <ion-icon name="arrow-round-back"></ion-icon>
+      </ion-button>
+    <ion-title class="titleSettings">Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-item>
+            <ion-icon class="iconSettings" name="person"></ion-icon>
+          <ion-label>Your Profile</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-icon class="iconSettings" name="information"></ion-icon>
+          <ion-label>About Us</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-icon class="iconSettings" name="mail"></ion-icon>
+          <ion-label>Contact Us</ion-label>
+        </ion-item>
+      </ion-list>
+      <div class="divLogOut">
+          <ion-button class="btnLogOut" fill="clear" color="medium" (click)="logout()">
+              Log Out
+          </ion-button>
+      </div>
+      
+
+</ion-content>

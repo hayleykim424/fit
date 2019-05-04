@@ -1,0 +1,126 @@
+<ion-header class="headerSignUp">
+  <ion-toolbar>
+      <ion-button class="btnBack" fill="clear" color="medium" (click)="showHome()">
+          <ion-icon name="arrow-round-back"></ion-icon>
+      </ion-button>
+    <ion-title class="titleSignUp">Back to Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="none">
+        <ion-list-header>
+          <ion-label class="pageTitle">
+            <h1>Sign Up</h1>
+          </ion-label>
+        </ion-list-header>
+  
+        <form [formGroup]="signUpForm" (submit)="signUp(signUpForm.value)">
+          
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input type="email" placeholder="you@domail.com" name="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input type="password" placeholder="minimum 6 characters" name="password" formControlName="password"></ion-input>
+          </ion-item>
+
+
+            <!-- <ion-toolbar>
+              <ion-list-header>
+                  <ion-label>Activity: How many days do you workout a week?</ion-label>
+              </ion-list-header>
+              <ion-row>
+                <ion-col float-left>
+                  none
+                </ion-col>
+                <ion-col col-2 class="colLeft">
+                    <p class="colLeft25">1</p>
+                  </ion-col>
+                <ion-col ion-item no-lines text-center col-2 >
+                  2-3
+                </ion-col>
+                <ion-col col-2 class="colRight">
+                  <p class="colRight22">4</p>
+                </ion-col>
+                <ion-col col-2  class="colRight">
+                  5+
+                </ion-col>
+              </ion-row>
+              <ion-range (ionChange)="selectCar()" min="1" max="5" step="1" snaps="true" formControlName="workoutWeek">
+              </ion-range>
+            </ion-toolbar>
+
+              <ion-toolbar>
+                  <ion-list-header>
+                      <ion-label>Endurance: how long can you run for? (minute)</ion-label>
+                  </ion-list-header>
+                  <ion-row>
+                    <ion-col float-left>
+                      none
+                    </ion-col>
+                    <ion-col col-2 class="colLeft">
+                        <p class="colLeft25">0.5</p>
+                      </ion-col>
+                    <ion-col ion-item no-lines text-center col-2 >
+                      1
+                    </ion-col>
+                    <ion-col col-2 class="colRight">
+                      <p class="colRight22">3</p>
+                    </ion-col>
+                    <ion-col col-2  class="colRight">
+                      5+
+                    </ion-col>
+                  </ion-row>
+                  <ion-range (ionChange)="selectCar()" min="1" max="5" step="1" snaps="true" formControlName="workoutRun">
+                  </ion-range>
+                </ion-toolbar>
+
+
+
+                  <ion-toolbar>
+                      <ion-list-header>
+                          <ion-label>Strength: How many squats can you do?</ion-label>
+                      </ion-list-header>
+                      <ion-row>
+                        <ion-col float-left>
+                          None
+                        </ion-col>
+                        <ion-col col-2 class="colLeft">
+                            <p class="colLeft25">3</p>
+                          </ion-col>
+                        <ion-col ion-item no-lines text-center col-2 >
+                          10
+                        </ion-col>
+                        <ion-col col-2 class="colRight">
+                          <p class="colRight18">20</p>
+                        </ion-col>
+                        <ion-col col-2  class="colRight">
+                          30+
+                        </ion-col>
+                      </ion-row>
+                      <ion-range (ionChange)="selectCar()" min="1" max="5" step="1" snaps="true" formControlName="workoutSquat">
+                      </ion-range>
+                    </ion-toolbar> -->
+
+
+
+
+
+          
+            <ion-button color="medium" expand="block" class="signup" type="submit" [disabled]="!signUpForm.controls.email.valid || !signUpForm.controls.password.valid">Sign Up</ion-button>
+  
+        </form>
+        
+          <ion-item>
+              
+            <p class="signinCss">Already have an account?</p>
+                <ion-button class="btnBack" fill="clear" color="medium" (click)="showSignIn()">
+                    Sign in
+                </ion-button>
+            
+          </ion-item>
+      </ion-list>
+
+</ion-content>

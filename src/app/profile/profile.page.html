@@ -1,0 +1,28 @@
+<ion-header class="headerProfile">
+  <ion-toolbar>
+      
+    <ion-title class="titleProfile" >Profile</ion-title>
+    
+    <ion-button class="btnSettings" fill="clear" color="medium" (click)="showSettings()">
+        <ion-icon name="settings"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Workout & Nutrition: Women</ion-card-subtitle>
+          <ion-card-title>Your Profile</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Sign up to view your profile and personal information
+
+          <p><a routerLink="/signup"> Sign Up</a></p>
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>

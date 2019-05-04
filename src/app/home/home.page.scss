@@ -1,0 +1,40 @@
+a {
+    text-decoration: none;
+  }
+  
+  a:link {
+    color: #DD7975;
+  }
+  
+  a:visited {
+    color: #DD7975;
+  }
+  
+  a:active {
+    color: #DD7975;
+  }
+
+.titles{
+    margin-top: 8px;
+    font-size: 16px;
+    color: #DD7975;
+}
+
+.card-img{
+    height:150px;
+}
+
+.card-title{
+    margin-left: 3px;
+    margin-top: 3px;
+    font-weight: bold;
+}
+.card-subtitle{
+    margin-left: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.btnSignUp{
+    display: block;
+}

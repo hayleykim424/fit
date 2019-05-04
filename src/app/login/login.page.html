@@ -1,0 +1,36 @@
+<ion-header class="headerSignUp">
+  <ion-toolbar>
+      <ion-button class="btnBack" fill="clear" color="medium" (click)="showSignUp()">
+          <ion-icon name="arrow-round-back"></ion-icon>
+      </ion-button>
+    <ion-title class="titleSignUp">Back to Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label class="pageTitle">
+        <h1>Sign In</h1>
+      </ion-label>
+    </ion-list-header>
+    
+    <form [formGroup] = "signInForm" (submit)="signIn(signInForm.value)">
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input type="email" placeholder="you@domail.com" name="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password" placeholder="minimum 6 characters" name="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-button color="medium" expand="block" class="signup" type="submit" [disabled]="!signInForm.controls.email.valid || !signInForm.controls.password.valid">Sign In</ion-button>
+  
+      </form>
+        
+          <!-- <ion-item>
+            <p>Don't have an account?<a routerLink="/signup"> Sign Un</a></p>
+          </ion-item> -->
+      </ion-list>
+
+</ion-content>

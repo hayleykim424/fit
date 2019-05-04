@@ -1,0 +1,78 @@
+.pageTitle{
+    color: #DD7975;
+  }
+  
+  .welcome-card ion-img {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+  
+  .signup{
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:link {
+    color: #DD7975;
+  }
+  
+  a:visited {
+    color: #DD7975;
+  }
+  
+  a:active {
+    color: #DD7975;
+  }
+
+.headerSignUp{
+    text-align: left;
+}
+.titleSignUp{
+    margin-top: 10px;
+    display: inline-block;
+}
+.iconSignUp{
+    margin-right: 10px;
+}
+
+.btnBack{
+    float: left;
+}
+
+.colLeft{
+    text-align: left;
+}
+
+.colLeft25{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    margin-left: 25%;
+}
+
+.colRight{
+    text-align: right;
+}
+
+.colRight18{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    margin-right: 18%;
+}
+
+.colRight22{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    margin-right: 22%;
+}
+
+.signinCss{
+  margin-top:12px;
+  font-size: 14px;
+}
