@@ -10,7 +10,7 @@
 <ion-content>
 
     <ion-list>
-        <ion-item>
+        <ion-item *ngIf="showProf">
             <ion-icon class="iconSettings" name="person"></ion-icon>
           <ion-label>Your Profile</ion-label>
         </ion-item>
@@ -23,8 +23,8 @@
           <ion-label>Contact Us</ion-label>
         </ion-item>
       </ion-list>
-      <div class="divLogOut">
-          <ion-button class="btnLogOut" fill="clear" color="medium" (click)="logout()">
+      <div class="divLogOut" *ngIf="showBtn">
+          <ion-button class="btnLogOut" fill="clear" color="medium" (click)="signOut()">
               Log Out
           </ion-button>
       </div>

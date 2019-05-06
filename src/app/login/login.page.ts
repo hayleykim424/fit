@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
         .then( ()=> {
           this.dataService.setUid(response.uid);
           //take user to notes
-          this.router.navigate(['/notes']);
+          this.router.navigate(['/tabs/home']);
 
         });
       }
