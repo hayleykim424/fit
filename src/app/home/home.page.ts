@@ -20,6 +20,10 @@ export class HomePage implements OnInit {
   ) { }
 
   ngOnInit() {
+
+  }
+
+  ionViewDidEnter(){
     this.currentUser = this.afAuth.auth.currentUser;
     if(this.currentUser == null){
      this.showBtn = true;
@@ -30,7 +34,6 @@ export class HomePage implements OnInit {
     console.log(this.currentUser);
     console.log(this.showBtn);
   }
-
  
 
   showSignup(){

@@ -24,6 +24,21 @@ export class SettingsPage implements OnInit {
   ) { }
 
   ngOnInit() {
+  //   this.currentUser = this.afAuth.auth.currentUser;
+  //   if(this.currentUser == null){
+  //    this.showBtn = false;
+     
+  //   }
+  //   else{
+  //     this.showBtn = true;
+  //     this.showProf = true;
+  //   }
+  //   console.log(this.currentUser);
+  //   console.log(this.showBtn);
+  
+  }
+
+  ionViewDidEnter(){
     this.currentUser = this.afAuth.auth.currentUser;
     if(this.currentUser == null){
      this.showBtn = false;
@@ -32,11 +47,13 @@ export class SettingsPage implements OnInit {
     else{
       this.showBtn = true;
       this.showProf = true;
+
+
     }
     console.log(this.currentUser);
     console.log(this.showBtn);
-  
   }
+
 
   showProfile(){
     this.router.navigate(['/tabs/profile']);
