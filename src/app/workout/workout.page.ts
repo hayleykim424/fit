@@ -44,7 +44,7 @@ export class WorkoutPage implements OnInit {
   ionViewWillEnter(){
     this.currentUser = this.afAuth.auth.currentUser;
     //this.workoutItems = [];
-    this.workoutTpyeItems = [];
+    //this.workoutTpyeItems = [];
     
     if(this.currentUser == null){
      this.showWorkout = false;
@@ -92,15 +92,17 @@ showPersonalWorkout(){
 
 showTypeOfWorkout(type)
   {
-    //let items:any = [];
+    let items:any = [];
+    //items = [];
     this.workouts.forEach((Workout)=>{
       if(Workout.wtype == type)
       {
-        this.workoutTpyeItems.push(Workout);
+        
+        items.push(Workout);
         
       }
     });
-    return this.workoutTpyeItems;
+    return items;
   }
 
   async showUserWorkout(info){
