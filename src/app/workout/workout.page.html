@@ -7,21 +7,21 @@
 <ion-content>
     <ion-title class="titles">Featured Workout</ion-title>
 
-    <ion-row>
-        <ion-col col-2>
-            <ion-card>
-                <img class="card-img" src="assets/img/shoulder.png"/>
-                <div class="card-title">Shoulders</div>
-                <div class="card-subtitle">Achieve toned and strong shoulders</div>
-            </ion-card>
-        </ion-col>
-        <ion-col col-2>
-            <ion-card>
-                <img class="card-img" src="assets/img/upper.png"/>
-                <div class="card-title">Upper body</div>
-                <div class="card-subtitle">Description goes here</div>
-            </ion-card>
-        </ion-col>
+        <ion-row>
+            <ion-col col-2>
+                <ion-card>
+                    <img class="card-img" src="assets/img/shoulder.png"/>
+                    <div class="card-title">Shoulders</div>
+                    <div class="card-subtitle">Achieve toned and strong shoulders</div>
+                </ion-card>
+            </ion-col>
+            <ion-col col-2>
+                <ion-card>
+                    <img class="card-img" src="assets/img/upper.png"/>
+                    <div class="card-title">Upper body</div>
+                    <div class="card-subtitle">Description goes here</div>
+                </ion-card>
+            </ion-col>
       </ion-row>
 
       <ion-row>
@@ -41,8 +41,19 @@
           </ion-col>
         </ion-row>
 
+        <ion-list  *ngIf="showWorkout">
+            <ion-title class="titles">Workout created for you</ion-title>
 
+            <ion-row *ngFor='let WorkoutBack of showTypeOfWorkout("back")'>
+                <ion-col>
+                    <ion-card  (click)="showUserWorkout({title: WorkoutBack.wtitle, description: WorkoutBack.wdescription, image: WorkoutBack.wimage})">
+                        <img class="card-img" src={{WorkoutBack.wimage}}/>
+                        <div class="card-title">{{WorkoutBack.wtitle}}</div>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+            
 
-    
 
 </ion-content>

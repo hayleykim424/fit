@@ -23,10 +23,13 @@
               </ion-button>
             </ion-card-content>
           </ion-card>
+
+            <ion-title  *ngIf="showGreeting" class="greeting">Hello {{name}}!</ion-title>
+          
   
           <ion-title class="titles">Workout for today</ion-title>
   
-              <ion-card>
+              <ion-card (click)="showUserWorkout()">
                   <img class="card-img" src="assets/img/shoulder.png"/>
                   <div class="card-title">name of workout</div>
                   <div class="card-subtitle">time and description</div>
@@ -34,7 +37,7 @@
   
               <ion-title class="titles">Meal of the day</ion-title>
   
-            <ion-card>
+            <ion-card  (click)="showUserMeal()">
                 <img class="card-img" src="assets/img/food1.png"/>
                 <div class="card-title">name of food</div>
                 <div class="card-subtitle">time and description</div>

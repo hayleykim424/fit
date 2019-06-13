@@ -1,0 +1,37 @@
+<ion-header class="headerSettings">
+  <ion-toolbar>
+      <ion-button class="btnBack" fill="clear" color="medium" (click)="goBack()">
+          <ion-icon name="arrow-round-back"></ion-icon>
+      </ion-button>
+    <ion-title class="titleSettings">Workout </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <img class="card-img" src={{image}} ngDefaultControl/>
+</ion-card>
+
+<ion-list>
+  <ion-item>
+      <ion-icon class="iconSettings" name="information"></ion-icon>
+    <!-- <ion-label>Dumbbell row</ion-label> -->
+    <ion-label>{{title}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+      <ion-icon class="iconSettings" name="body"></ion-icon>
+    <ion-label>Shoulders, upper back</ion-label>
+  </ion-item>
+
+  <ion-item>
+      <!-- <ion-icon class="iconSettings" name="checkmark"></ion-icon> -->
+    <!-- <p [(ngModel)]="description" ngDefaultControl>{{description}}</p> -->
+    <p>{{description}}</p>
+  </ion-item>
+</ion-list>
+
+</ion-content>
+
+

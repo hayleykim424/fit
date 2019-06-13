@@ -16,6 +16,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
+import { UserworkoutPageModule } from '../app/userworkout/userworkout.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,8 @@ import { environment } from '../environments/environment';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UserworkoutPageModule
   ],
   providers: [
     StatusBar,

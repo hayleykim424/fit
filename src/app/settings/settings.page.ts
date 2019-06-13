@@ -14,7 +14,7 @@ export class SettingsPage implements OnInit {
 
   currentUser : any;
   showBtn     : boolean = false;
-  showProf : boolean = true;
+  showProf : boolean = false;
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -24,18 +24,6 @@ export class SettingsPage implements OnInit {
   ) { }
 
   ngOnInit() {
-  //   this.currentUser = this.afAuth.auth.currentUser;
-  //   if(this.currentUser == null){
-  //    this.showBtn = false;
-     
-  //   }
-  //   else{
-  //     this.showBtn = true;
-  //     this.showProf = true;
-  //   }
-  //   console.log(this.currentUser);
-  //   console.log(this.showBtn);
-  
   }
 
   ionViewDidEnter(){
@@ -57,6 +45,14 @@ export class SettingsPage implements OnInit {
 
   showProfile(){
     this.router.navigate(['/tabs/profile']);
+  }
+
+  showAboutUs(){
+    this.router.navigate(['/aboutus']);
+  }
+
+  showContact(){
+    this.router.navigate(['/contact']);
   }
 
   signOut() {

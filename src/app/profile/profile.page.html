@@ -12,7 +12,7 @@
 
 <ion-content>
 
-    <ion-card *ngIf="showProf">
+    <ion-card *ngIf="showBtn">
         <ion-card-header>
           <ion-card-subtitle>Workout & Nutrition: Women</ion-card-subtitle>
           <ion-card-title>Your Profile</ion-card-title>
@@ -24,5 +24,124 @@
           <p><a routerLink="/signup"> Sign Up</a></p>
         </ion-card-content>
       </ion-card>
+
+      <ion-item *ngIf="email">
+          <ion-row>
+              <ion-col class="col" size="12" size-sm>
+                  <ion-icon class="col iconSettings" name="mail"></ion-icon>
+                  <ion-label class="col">Your email:&nbsp;</ion-label>
+                  <ion-label class="col">{{email}}</ion-label>
+              </ion-col>
+              
+          </ion-row>
+          
+        </ion-item>
+
+        
+
+        <ion-list *ngIf="showProf">
+          <ion-item>
+            <ion-label position="stacked">Name</ion-label>
+            <ion-input type="text" onpaste="return false;" [(ngModel)]="profile.username" maxlength="15" placeholder="Your first name" value={{name}}></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Height</ion-label>
+            <ion-input type="tel" onpaste="return false;" maxlength="3" pattern="[0-9]*" [(ngModel)]="profile.height" placeholder="in cm" value={{height}}></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label position="stacked">Weight</ion-label>
+            <ion-textarea type="tel" onpaste="return false;" maxlength="3" pattern="[0-9]*" [(ngModel)]="profile.weight" placeholder="in kg" value={{weight}}></ion-textarea>
+          </ion-item>
+
+          <ion-toolbar>
+            <ion-list-header>
+                <ion-label>Activity: How many days do you workout a week?</ion-label>
+            </ion-list-header>
+            <ion-row>
+              <ion-col float-left>
+                none
+              </ion-col>
+              <ion-col col-2 class="colLeft">
+                  <p class="colLeft25">1</p>
+                </ion-col>
+              <ion-col ion-item no-lines text-center col-2 >
+                2-3
+              </ion-col>
+              <ion-col col-2 class="colRight">
+                <p class="colRight22">4</p>
+              </ion-col>
+              <ion-col col-2  class="colRight">
+                5+
+              </ion-col>
+            </ion-row>
+            <ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="profile.activity" value={{activity}}>
+            </ion-range>
+          </ion-toolbar>
+
+            <ion-toolbar>
+                <ion-list-header>
+                    <ion-label>Endurance: how long can you run for? (minute)</ion-label>
+                </ion-list-header>
+                <ion-row>
+                  <ion-col float-left>
+                    none
+                  </ion-col>
+                  <ion-col col-2 class="colLeft">
+                      <p class="colLeft25">0.5</p>
+                    </ion-col>
+                  <ion-col ion-item no-lines text-center col-2 >
+                    1
+                  </ion-col>
+                  <ion-col col-2 class="colRight">
+                    <p class="colRight22">3</p>
+                  </ion-col>
+                  <ion-col col-2  class="colRight">
+                    5+
+                  </ion-col>
+                </ion-row>
+                <ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="profile.endurance" value={{endurance}}>
+                </ion-range>
+              </ion-toolbar>
+
+
+
+                <ion-toolbar>
+                    <ion-list-header>
+                        <ion-label>Strength: How many squats can you do?</ion-label>
+                    </ion-list-header>
+                    <ion-row>
+                      <ion-col float-left>
+                        None
+                      </ion-col>
+                      <ion-col col-2 class="colLeft">
+                          <p class="colLeft25">3</p>
+                        </ion-col>
+                      <ion-col ion-item no-lines text-center col-2 >
+                        10
+                      </ion-col>
+                      <ion-col col-2 class="colRight">
+                        <p class="colRight18">20</p>
+                      </ion-col>
+                      <ion-col col-2  class="colRight">
+                        30+
+                      </ion-col>
+                    </ion-row>
+                    <ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="profile.strength" value={{strength}}>
+                    </ion-range>
+                  </ion-toolbar>
+
+
+
+          <ion-button expand="block" (click)="createUserProfile()">Save/ Update</ion-button>
+        </ion-list>
+
+
+        <!-- <ion-item>
+          <ion-label>What you can or cannot eat</ion-label>
+        </ion-item> -->
+
+      
 
 </ion-content>

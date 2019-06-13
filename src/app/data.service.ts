@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class DataService {
         throw "User is not authenticated";
       }
       else{
-        const path = `tabs/home/${this.uid}/`;
+        const path = `profile/${this.uid}/`;
         const dbRef = this.afDb.list( path );
         await dbRef.push( data );
         return { success: true };
@@ -43,5 +44,13 @@ export class DataService {
 
   setUid( uid:string ) {
     this.uid = uid;
+  }
+
+
+  async updateProfile( profile ){
+    const path = `profile/${this.uid}`;
+    const dbRef = this.afDb.list( path );
+    await dbRef.update( profile.key, {name: profile.name, date: profile.date, content: profile.content});
+    return { success: true };
   }
 }

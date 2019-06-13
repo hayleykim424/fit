@@ -25,3 +25,43 @@ a {
 .btnSettings{
     float: right;
 }
+
+.iconSettings{
+  margin-right: 10px;
+}
+
+.col{
+  text-align: left;
+  display: inline-block;
+}
+
+
+//ion-range css
+.colLeft{
+  text-align: left;
+}
+
+.colLeft25{
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  margin-left: 25%;
+}
+
+.colRight{
+  text-align: right;
+}
+
+.colRight18{
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  margin-right: 18%;
+}
+
+.colRight22{
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  margin-right: 22%;
+}

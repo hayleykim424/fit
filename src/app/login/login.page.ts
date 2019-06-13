@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
       //console.log(response);
       if(response.success){
         //show toast
-        this.showToast('Welcome Back!')
+        this.showToast('Welcome!')
         .then( ()=> {
           this.dataService.setUid(response.uid);
           //take user to notes
@@ -55,7 +55,7 @@ export class LoginPage implements OnInit {
   async showToast(msg){
     const toast = await this.toaster.create({
       message: msg,
-      duration: 2000
+      duration: 1000
     });
     toast.present();
   }
