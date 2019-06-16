@@ -17,6 +17,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 import { UserworkoutPageModule } from '../app/userworkout/userworkout.module';
+import { UsermealPageModule } from '../app/usermeal/usermeal.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,7 +32,8 @@ import { UserworkoutPageModule } from '../app/userworkout/userworkout.module';
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     ReactiveFormsModule,
-    UserworkoutPageModule
+    UserworkoutPageModule,
+    UsermealPageModule
   ],
   providers: [
     StatusBar,

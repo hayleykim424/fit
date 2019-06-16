@@ -8,6 +8,8 @@ import { ModalController, NavParams } from '@ionic/angular';
 
 import { UserworkoutPage } from '../userworkout/userworkout.page';
 import { UserProfile } from '../models/userProfile';
+
+import { Observable } from 'rxjs';
 // import { Subscription } from 'rxjs';
 // import { NavController } from 'ionic-angular';
 
@@ -18,6 +20,15 @@ import { UserProfile } from '../models/userProfile';
 })
 export class WorkoutPage implements OnInit {
 
+  //workouts: Array<any> = [];
+  //showWorkout: boolean = false;
+  //currentUser : any;
+  //workoutItems: any = [];
+  //workoutTpyeItems: any = [];
+
+  //workout as an Observable (so will update automatically)
+  workouts$:Observable<any[]>;
+  workoutTypes:Array<any>;
   workouts: Array<any> = [];
   showWorkout: boolean = false;
   currentUser : any;
@@ -39,21 +50,39 @@ export class WorkoutPage implements OnInit {
   }
 
   ngOnInit() {
+    // subscribe to the auth$ observable in this.authenticationService
+    this.authenticationService.auth$.subscribe( (user) => {
+      //if user is authenticated
+      if( user ){
+        //set showWorkout to true
+        this.showWorkout = true
+        //subscribe to the data in workouts
+        this.workouts$ = this.afDatabase.object('workouts/').valueChanges();
+      }
+      //if user is not authenticated
+      else{
+        
+        this.showWorkout = false;
+      }
+    });
   }
 
-  ionViewWillEnter(){
-    this.currentUser = this.afAuth.auth.currentUser;
-    //this.workoutItems = [];
-    //this.workoutTpyeItems = [];
+  ionViewDidEnter(){
+    //this.currentUser = this.afAuth.auth.currentUser;
+    // //this.workoutItems = [];
+    // //this.workoutTpyeItems = [];
     
-    if(this.currentUser == null){
-     this.showWorkout = false;
-    }
-    else{
-      this.showPersonalWorkout();
+    
+    // if(this.currentUser == null){
+    //  this.showWorkout = false;
+    // }
+    // else{
+    //   //çthis.workoutTpyeItems.length = 0;
+    //   //this.workoutTpyeItems = [];
+    //   this.showPersonalWorkout();
 
 
-    }
+    // }
 }
 
 ionPageWillLeave() {
@@ -92,17 +121,28 @@ showPersonalWorkout(){
 
 showTypeOfWorkout(type)
   {
-    let items:any = [];
-    //items = [];
-    this.workouts.forEach((Workout)=>{
-      if(Workout.wtype == type)
-      {
+    // let items:any = [];
+    // //items = [];
+    // this.workouts.forEach((Workout)=>{
+    //   if(Workout.wtype == type)
+    //   {
         
-        items.push(Workout);
+    //     items.push(Workout);
         
-      }
+    //   }
+    // });
+    // return items;
+    //subscribe to the workout$ and filter according to type
+    this.workouts$.subscribe( (workouts) => {
+      //set workoutTypes to values filtered using type
+      let workoutTypes:Array<any> = workouts.filter( (item) => {
+        if( item.wtype == type){
+          return item;
+        }
+      });
+      //return the filtered array of workouts
+      return workoutTypes;
     });
-    return items;
   }
 
   async showUserWorkout(info){

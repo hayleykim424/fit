@@ -42,6 +42,19 @@
           </ion-col>
         </ion-row>
 
+        <ion-list  *ngIf="showRecipe">
+          <ion-title class="titles">Recipes</ion-title>
+
+          <ion-row *ngFor='let RecipeAny of showTypeOfRecipe("any")'>
+              <ion-col>
+                  <ion-card  (click)="showUserMeal({title: RecipeAny.rtitle, instruction: RecipeAny.rinstruction, ingredients: RecipeAny.ringredients, image: RecipeAny.rimage})">
+                      <img class="card-img" src={{RecipeAny.rimage}}/>
+                      <div class="card-title">{{RecipeAny.rtitle}}</div>
+                  </ion-card>
+              </ion-col>
+          </ion-row>
+      </ion-list>
+
 </ion-content>
 
 
